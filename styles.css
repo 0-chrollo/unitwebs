@@ -43,11 +43,11 @@ body {
 .logo img {
     
     background-color: white;
-    border-radius: 50rem;
-    padding:5px;
+    border-radius: 80%;
+    padding:6px;
 
-    height:3.5rem;
-    width: 3.5rem;
+    height:60px;
+    width: 4.5rem;
     transition: all 0.3s ease;
 }
 
