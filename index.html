@@ -32,191 +32,260 @@
     <div id="overlay"></div>
   </nav>
 
-      <style>
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-          }
-          
-          .container {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 0px;
-              height: 60vh;
-            
-          }
-          
-          .column1 {
-              flex: 1;
-              min-width: 300px;
-              padding: 35px;
-            
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+       
+        min-height: 60vh;
+    }
+    
+    .column1 {
+        flex: 1;
+        min-width: 300px;
+        padding: 35px;
+        backdrop-filter: blur(1px);
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        position: relative;
+    }
+    
+    .column1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('bgp.webp') center/cover no-repeat;
+        filter: blur(2px);
+        z-index: -1;
+    } 
+    
+    .column1::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(35, 35, 35, 0.728);
+        z-index: -1;
+    }
+    
+    .column2 {
+   display: none;
+    }
+
+    @media(min-width: 768px) {
+
+        .column2{
+
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        background: linear-gradient(60deg, rgb(34, 50, 67) 0%, #2d2d2d 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        }
+    
+
+    .card {
+        background: white;
+        padding: 35px;
+        border-top-right-radius: 35px;
+        border-bottom-left-radius: 35px;
+        border-left: 5px solid rgb(86, 134, 186);
+        max-width: 450px;
+        width: 100%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-title {
+        font-size: clamp(1.6rem, 4vw, 2rem);
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .card-subtitle {
+        font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .card-features {
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .card-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 0;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        color: #333;
+    }
+
+    .feature-icon {
+        width: 8px;
+        height: 8px;
+        background: #4a5fc1;
+        border-radius: 50%;
+        margin-top: 8px;
+        flex-shrink: 0;
+    }
+
+    .card-cta {
+        width: 100%;
+        padding: 12px;
+     
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(1rem, 2.5vw, 1.05rem);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .card-cta:hover {
+        background: #3a4fa1;
+    }
+
+    .header {
+        margin-top: 80px;
+        border: 2px solid white;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 5px 15px;
+        text-align: center;
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        font-weight: 500;
+        color: #ffffff;
+        align-self: flex-start;
+        width: fit-content;
+    }
+    
+    .title {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: 600;
+        color:white;
+        line-height: 1.3;
+    }
+    
+    .features {
+        padding: 10px;
+        background-color: #74727235;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        color: white;
+    }
+    
+    .checkmark {
+        width: 20px;
+        height: 20px;
+        border: 3px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: white;
+        font-weight: bold;
+    }
+
+    .desc {
+        font-weight: 500;
+        font-size: 21px;
+        color:white;
+        line-height: 1.3;
+    }
+    
+    .cta {
+        border: 2px solid rgba(255, 255, 255, 0.606);
+        background-color: rgb(255, 255, 255);
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: 4px 16px;
+        text-align: center;
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        font-weight: 500;
+        color: black;
+        cursor: pointer;
+        align-self: flex-start;
+        width: fit-content;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="column1">
+        <div class="header">We are UnitWebs</div>
         
-              backdrop-filter: blur(1px);
-              display: flex;
-              flex-direction: column;
-              gap: 25px;
-              position: relative;
-          }
-          
-          .column1::before {
+        <div class="title"> 
+            We Build Modern Responsive<br>Websites
+        </div>
+        <br>
+        <div class="features">
+            <div class="feature">
+                <span class="checkmark">✓</span>
+                <span>Responsive</span>
+            </div>
+            <div class="feature">
+                <span class="checkmark">✓</span>
+                <span>Secure</span>
+            </div>
+            <div class="feature">
+                <span class="checkmark">✓</span>
+                <span>Long-lasting websites</span>
+            </div>
+            <div class="feature">
+                <span class="checkmark">✓</span>
+                <span>Less-Maintenance</span>
+            </div>
+        </div>
+        <br>
+        <div class="desc">
+            <p>Transform your digital presence with cutting-edge web solutions crafted by industry-leading experts. We deliver exceptional results that drive growth.</p>
+        </div>
         
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: url('bgp.webp') center/cover no-repeat;
-              filter: blur(2px);
-              z-index: -1;
-          } 
-          
-          .column1::after {
-         
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: rgba(35, 35, 35, 0.728);
-              z-index: -1;
-          }
-          
-          .column2 {
-              flex: 1;
-              min-width: 200px;
-              padding: 20px;
-              background: #000000;
-          }
-
-
-          
-          .header {
-            margin-top: 80px;
-              border: 2px solid white;
-              
-              border-top-left-radius: 20px;
-              border-bottom-right-radius: 20px;
-              padding: 5px 15px;
-              text-align: center;
-              font-size: clamp(1.2rem, 3vw, 1.8rem);
-              font-weight: 500;
-              color: #ffffff;
-              align-self: flex-start;
-              width: fit-content;
-
-          }
-          
-          .title {
-              font-size: clamp(1.5rem, 4vw, 2.5rem);
-              font-weight: 600;
-              color:white;
-              line-height: 1.3;
-          }
-          
-          .features {
-            padding: 10px;
-            background-color: #74727235;
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 15px;
-          }
-          
-          .feature {
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              font-size: clamp(0.9rem, 2vw, 1.1rem);
-              color: white
-          }
-          
-          .checkmark {
-              width: 20px;
-              height: 20px;
-              border: 3px solid white;
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-shrink: 0;
-              
-              color: white;
-              font-weight: bold;
-          }
-
-
-          .desc{
-            font-weight: 500;
-font-size: 21px;
-            color:white;
-            line-height: 1.3;
-          }
-          
-          .cta {
-              border: 2px solid rgba(255, 255, 255, 0.606);
-              background-color: rgb(255, 255, 255);
+        <div class="cta">Get Quote →</div>
+    </div>
+    
+    <div class="column2">
+        <div class="card">
+            <span class="card-badge">Premium Agency</span>
             
-
-              border-top-left-radius: 15px;
-              border-bottom-right-radius: 15px;
-
-
-              padding: 4px 16px;
-              text-align: center;
-              font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-              font-weight: 500;
-              color: black;
-              cursor: pointer;
-              align-self: flex-start;
-              width: fit-content;
-          }
-      </style>
-
-      <div class="container">
-          <div class="column1">
-              <div class="header">We are UnitWebs</div>
-              
-              <div class="title"> 
-                  We Build Modern Responsive<br>Websites
-              </div>
-              <br>
-              <div class="features">
-                  <div class="feature">
-                      <span class="checkmark">✓</span>
-                      <span>Responsive</span>
-                  </div>
-                  <div class="feature">
-                      <span class="checkmark">✓</span>
-                      <span>Secure</span>
-                  </div>
-                  <div class="feature">
-                      <span class="checkmark">✓</span>
-                      <span>Long-lasting websites</span>
-                  </div>
-                  <div class="feature">
-                      <span class="checkmark">✓</span>
-                      <span>Less-Maintenance</span>
-                  </div>
-              </div>
-<br>
-              <div class="desc">
-
-                <p>This is well written obvioulsy and that does not mean it should not have been, but must be a good generated text for the potentioal customers</p>
-              </div>
-
-
-              
-              <div class="cta">Get Quote →</div>
-          </div>
-          
-          <div class="column2">
-              <p>Column 2</p>
-          </div>
-      </div>
-
+            <h2 class="card-title">Custom Designed Websites</h2>
+            <p class="card-subtitle">Elevate your brand with professional web development tailored to your unique vision</p>
+            
+   
+            
+            <button class="card-cta">Start Your Project →</button>
+        </div>
+    </div>
+</div>
 
 </body>
 
