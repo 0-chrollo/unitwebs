@@ -39,6 +39,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        hamburger.classList.add('scrolled');
+    } else {
+        hamburger.classList.remove('scrolled');
+    }
+});
+
 
 // Close menu on escape key
 document.addEventListener('keydown', (e) => {
