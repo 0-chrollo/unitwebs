@@ -17,7 +17,7 @@ body {
 
 .navbar.scrolled {
     color:black;
-    background: rgb(146, 146, 146);
+    background: rgb(169, 169, 169);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,6 +41,7 @@ body {
     display: flex;
     align-items: center;
     gap: 3px;
+   
     text-decoration: none;
     transition: all 0.3s ease;
     background-color: transparent;
@@ -50,10 +51,10 @@ body {
 .logo img {
 
     border-radius: 80%;
-    padding:5px;
-
-    height:85x;
-    width: 7rem;
+    padding: 5px;
+background-color: aliceblue;
+    height:54px;
+    width: 3.9rem;
     transition: all 0.3s ease;
 }
 
@@ -105,7 +106,7 @@ body {
 }
 
 .hamburger {
-    background-color:rgb(146, 146, 146);
+   
     border-radius: 50px;
     color:rgb(255, 255, 255);
     display: none;
@@ -118,8 +119,8 @@ body {
 .hamburger span {
     
     width: 26px;
-    height: 3.5px;
-    background:black;
+    height: 3.2px;
+    background:white;
     margin: 1.7px 0;
     transition: all 0.3s ease;
     border-radius: 1px;
