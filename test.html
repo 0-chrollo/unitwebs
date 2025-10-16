@@ -232,6 +232,148 @@ font-size: 21px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    .trust {
+        background: #000;
+        overflow-x: hidden;
+        margin-bottom: 50px;
+    }
+
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 30px 0;
+    }
+
+    .marquee-content {
+        display: flex;
+        animation: scroll 20s linear infinite;
+    }
+
+    .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 40px;
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .marquee-item img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>
+<div class="trust">
+
+
+
+<div class="marquee">
+    <div class="marquee-content">
+        <div class="marquee-item">
+            <img src="image-world.jpg" alt="">
+            <span>World</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-Earth.jpg" alt="">
+            <span>Earth</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-Jupiter.jpg" alt="">
+            <span>Jupiter</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-water.jpg" alt="">
+            <span>Water</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-fire.jpg" alt="">
+            <span>Fire</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-dragon.jpg" alt="">
+            <span>Dragon</span>
+        </div>
+        
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-item">
+            <img src="image-world.jpg" alt="">
+            <span>World</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-Earth.jpg" alt="">
+            <span>Earth</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-Jupiter.jpg" alt="">
+            <span>Jupiter</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-water.jpg" alt="">
+            <span>Water</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-fire.jpg" alt="">
+            <span>Fire</span>
+        </div>
+        <div class="marquee-item">
+            <img src="image-dragon.jpg" alt="">
+            <span>Dragon</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
 </body>
 
 

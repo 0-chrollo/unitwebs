@@ -91,7 +91,7 @@
         flex: 1;
         min-width: 300px;
         padding: 40px;
-        background: linear-gradient(60deg, rgb(34, 50, 67) 0%, #2d2d2d 100%);
+        background: linear-gradient(60deg, rgb(40, 58, 78) 0%, #2d2d2d 100%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -285,6 +285,114 @@
             <button class="card-cta">Start Your Project →</button>
         </div>
     </div>
+</div>
+
+
+
+<style>
+
+    .trust {
+        background: linear-gradient(60deg, rgb(40, 58, 78) 0%, #2d2d2d 100%);
+        overflow-x: hidden;
+        margin-bottom: 50px;
+        color: white;
+    }
+
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 14px 0;
+    }
+
+    .marquee-content {
+        display: flex;
+        animation: scroll 20s linear infinite;
+    }
+
+    .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 40px;
+        font-size: 17px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .marquee-item img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>
+<div class="trust">
+
+    <div>
+        <h3 style="padding: 25px 30px; font-size: 23px;">Busineses we worked with</h3>
+    </div>
+
+
+<div class="marquee">
+    <div class="marquee-content">
+        <div class="marquee-item">
+            <img src="logo (1).png" alt="">
+            <span>Manams Construction</span>
+        </div>
+        <div class="marquee-item">
+            <img src="domerius-logo.png" alt="">
+            <span>Domerius Services</span>
+        </div>
+        <div class="marquee-item">
+            <img src="a73.png" alt="">
+            <span>A73COM</span>
+        </div>
+        <div class="marquee-item">
+            <img src="logos.jpg" alt="">
+            <span>precision Genuine Solutions</span>
+        </div>
+
+        
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-item">
+            <img src="logo (1).png" alt="">
+            <span>Manams Construction</span>
+        </div>
+        <div class="marquee-item">
+            <img src="domerius-logo.png" alt="">
+            <span>Domerius Services</span>
+        </div>
+        <div class="marquee-item">
+            <img src="a73.png" alt="">
+            <span>A73COM</span>
+        </div>
+        <div class="marquee-item">
+            <img src="logos.jpg" alt="">
+            <span>precision Genuine Solutions</span>
+        </div>
+
+    
+  
+    </div>
+</div>
+
+
+
+
+
+
+
+
 </div>
 
 </body>
