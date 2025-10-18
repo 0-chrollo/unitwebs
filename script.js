@@ -39,13 +39,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-        hamburger.classList.add('scrolled');
-    } else {
-        hamburger.classList.remove('scrolled');
-    }
-});
 
 
 // Close menu on escape key
@@ -58,12 +51,23 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Handle window resize
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
+// Mobile navbar hide on scroll
+let lastScrollTop = 0;
+
+
+window.addEventListener('scroll', function() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Hide navbar when scrolling down, show when scrolling up
+        if (scrollTop > lastScrollTop && scrollTop > 80) {
+            navbar.classList.add('hide-on-scroll');
+        } else {
+            navbar.classList.remove('hide-on-scroll');
+        }
+        
+        lastScrollTop = scrollTop;
     }
 });

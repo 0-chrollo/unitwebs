@@ -1,10 +1,3 @@
-body {
-    font-family:'Gill Sans';
-  
-    line-height: 1.6;
-    text-align: left;
-}
-
 @media (min-width: 980px) {
     .navbar.scrolled {
         color:black;
@@ -32,8 +25,6 @@ body {
 
     
 }
-
-
 
 .nav-container {
     position: sticky;
@@ -86,34 +77,6 @@ background-color: aliceblue;
     left: 50%;           /* Add this */
     transform: translateX(-50%);  /* Add this */
 }
-
-.nav-item {
-    align-items: center;
-    
-}
-
-.nav-link {
-    color:white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 10px 20px;  /* Add horizontal padding */
-    position: relative;
-    transition: all 0.3s ease;
-    font-size: 17px;
-    align-self: center;
-    justify-content: center;
-    align-self: flex-start;
-    border: 2px solid white;  /* Add this */
-    border-radius: 25px;      /* Add this */
-}
-
-
-.nav-link:hover {
-    color: black;
-    transform: translateY(-1px);
-    background: white; /* Add this */
-}
-
 .hamburger {
    
     border-radius: 50px;
@@ -179,7 +142,7 @@ background-color: aliceblue;
 
     /* Keep navbar always visible with background on mobile */
     .navbar {
-    
+        background: rgba(30, 60, 114, 0.95); /* or any color you want */
         transition: transform 0.3s ease;
     }
 
@@ -202,47 +165,4 @@ background-color: aliceblue;
     .nav-menu.active {
         left: 0;
     }
-
-
-    .nav-item {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 0.5s ease;
-    }
-
-    .nav-menu.active .nav-item {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
-    .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.2s; }
-    .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.3s; }
-    .nav-menu.active .nav-item:nth-child(4) { transition-delay: 0.4s; }
-    .nav-menu.active .nav-item:nth-child(5) { transition-delay: 0.5s; }
-
-    .nav-link {
-        font-size: 1.2rem;
-        color: white;
-        padding: 1rem 0;
-    }
-
-  
 }
-
-@media screen and (max-width: 480px) {
-    .nav-menu {
-        width: 85%;
-    }
-
-    .nav-link {
-  
-        transition: all 0.3s ease;
-        font-size: 17px;
-
-        border-radius: 25px;      /* Add this */
-    }
-    
-
-}
-
