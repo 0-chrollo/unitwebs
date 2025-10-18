@@ -166,21 +166,17 @@ background-color: aliceblue;
 }
 
 
-/* Add this new media query for mobile */
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
     .hamburger {
         display: flex;
     }
 
-    /* Hide navbar when scrolling down on mobile */
-    .navbar.hide-on-scroll {
-        transform: translateY(-100%);
-    }
-
-    /* Keep navbar always visible with background on mobile */
+    /* Keep navbar fixed and always visible on mobile */
     .navbar {
-    
-        transition: transform 0.3s ease;
+        position:absolute;
+        top: 0;
+        background: transparent;
     }
 
     .nav-menu {
@@ -202,6 +198,7 @@ background-color: aliceblue;
     .nav-menu.active {
         left: 0;
     }
+
 
 
     .nav-item {

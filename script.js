@@ -52,17 +52,17 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Mobile navbar hide on scroll
-let lastScrollTop = 0;
+let lastScrollTop = 1;
 
 
 window.addEventListener('scroll', function() {
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 968;
     
     if (isMobile) {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         // Hide navbar when scrolling down, show when scrolling up
-        if (scrollTop > lastScrollTop && scrollTop > 80) {
+        if (scrollTop > lastScrollTop && scrollTop > 0) {
             navbar.classList.add('hide-on-scroll');
         } else {
             navbar.classList.remove('hide-on-scroll');
