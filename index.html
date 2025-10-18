@@ -235,11 +235,39 @@
         text-align: center;
         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         font-weight: 500;
-        color: black;
+        color: rgb(93, 93, 93);
         cursor: pointer;
         align-self: flex-start;
         width: fit-content;
     }
+
+
+
+
+    .cta {
+  
+    font-size: 1rem;
+    font-weight: bold;
+   
+   
+
+    cursor: pointer;
+    position: relative;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgb(41, 93, 152);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(164, 163, 163, 0.379);
+    }
+}
+
+.pulse-btn:hover {
+    transform: scale(1);
+}
 </style>
 </head>
 <body>
@@ -798,11 +826,17 @@
                         <p>Take your knowledge testing to the next level with advanced quiz generation, providing more customization options for your quizzes.</p>
                     </div>
                 </div>
+
+              <div class="head" style="text-align:end;" >
+                <p><button class="cta">Get Quote</button></p>
+                </div>
             </div>
 
             <div class="feature-image">
                 <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop" alt="Person working on laptop">
             </div>
+
+
         </div>
     </section>
 
