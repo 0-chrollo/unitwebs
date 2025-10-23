@@ -574,7 +574,7 @@
 .ct {
         flex: 1;
         min-width: 300px;
-        padding: 5px;
+  
         backdrop-filter: blur(98px);
         flex-direction: column;
         gap: 27px;
@@ -607,23 +607,26 @@
     
 
         .features-section {
-            max-width: 1100px;
+        
          
-           
+           padding: 10vh;
       
            
         }
 
-        .head {
-            text-align:start;
-           
-        }
+  
 
-        .head h3 {
-            font-size: 3.5rem;
-            font-weight: 700;
-          
-            color: white;
+        .nf {
+            font-size: 2rem;
+            font-weight: 600;
+            border: 1.7px solid white;
+        border-top-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        padding: 1px 25px;
+        width: fit-content;
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+
+   color:white;
         }
 
         .head p {
@@ -710,12 +713,6 @@
             }
 
             .head h3 {
-                border: 1.7px solid white;
-        border-top-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        padding: 1px 25px;
-        text-align: center;
-        font-size: clamp(1.2rem, 3vw, 1.8rem);
 
         color: #ffffff;
         align-self: flex-start;
@@ -734,10 +731,6 @@
 
             }
 
-            .head h3 {
-                font-size: 1.2qrem;
-                
-            }
 
             .head p {
                 font-size: 1rem;
@@ -773,7 +766,7 @@
 
     <section class="features-section">
         <div class="head">
-            <h3>New Features</h3>
+            <h3 class="nf">New Features</h3>
             <p>Explore the latest features that enhance your learning experience and make it even more exciting.</p>
         </div>
 
@@ -1311,7 +1304,7 @@
 
     /* Footer Styles */
     .footer {
-      background-color: #313131;
+      background-color: #3a3a3a;
         color:white;
         padding: 40px 0 20px;
         margin-top: auto;
@@ -1343,7 +1336,7 @@
         padding: 3px 10px;
         border-top-right-radius: 20px;
         border-bottom-left-radius: 20px;
-        border: 2px solid white;
+        border: 1.5px solid white;
 
     }
 

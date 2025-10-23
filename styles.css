@@ -8,7 +8,7 @@ body {
 @media (min-width: 980px) {
     .navbar.scrolled {
         color:black;
-        background: rgb(169, 169, 169);
+        background: #3a3a3a;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     
@@ -61,7 +61,7 @@ body {
 
     border-radius: 80%;
     padding: 5px;
-background-color: rgba(240, 248, 255, 0.301);
+background-color: rgba(240, 248, 255, 0.653);
     height:54px;
     width: 3.6rem;
     transition: all 0.3s ease;
