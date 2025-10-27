@@ -287,9 +287,12 @@
 </div>
 
 
-
     <style>
-  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         .pricing-wrapper {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -304,9 +307,10 @@
 
         .alert-box {
             background-image: url('view1.webp');
-            
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding:15px;
+            padding: 15px;
             border-radius: 2px;
             text-align: center;
             margin-bottom: 40px;
@@ -362,50 +366,38 @@
             margin-bottom: 40px;
         }
 
-
-    
         .plan-card {
-        flex: 1;
-        min-width: 300px;
-        padding: 35px;
-        backdrop-filter: blur(1px);
-        display: flex;
-        flex-direction: column;
-        gap: 26px;
-        position: relative;
-        
-       
-    }
-      
+            flex: 1;
+            min-width: 300px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+            position: relative;
+            background: #000000;
+            border-radius: 2px;
+            overflow: hidden;
+        }
 
         .plan-card::before {
-        
-        content: '';
-        position: absolute;
-       
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('bgp.webp') center/cover no-repeat;
-     
-      filter: blur(4px);
-        z-index: -1;
-    } 
-    
-    .plan-card::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      
- 
-    
-    }
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('bgp.webp');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            opacity: 0.3;
+            z-index: 0;
+        }
 
-   
+        .plan-card > * {
+            position: relative;
+            z-index: 1;
+        }
 
         .tag-label {
             background: #6366f1;
@@ -420,7 +412,7 @@
         }
 
         .tag-label.custom {
-            background: #f59e0b;
+            background: rgb(21, 60, 83);
         }
 
         .plan-title {
@@ -438,18 +430,19 @@
         }
 
         .plan-price.custom-price {
-            color: #f59e0b;
+            color:  rgb(27, 116, 168);
             font-size: 2em;
         }
 
         .plan-duration {
-            color: #6b7280;
+            color: #d1d5db;
             font-size: 0.95em;
             margin-bottom: 25px;
         }
 
         .domain-selector {
-            background: #f9fafb;
+            background: rgba(249, 250, 251, 0.1);
+            backdrop-filter: blur(10px);
             padding: 12px;
             border-radius: 6px;
             margin-bottom: 25px;
@@ -457,7 +450,7 @@
         }
 
         .domain-selector p {
-            color: #4b5563;
+            color: #e5e7eb;
             font-weight: 500;
             margin-bottom: 6px;
             font-size: 0.9em;
@@ -487,10 +480,10 @@
             content: '✓';
             padding: 6px;
             color: #000000;
-            border: 2px solid  white;
+            border: 2px solid white;
             border-radius: 50px;
             font-weight: bold;
-            font-size:14px;
+            font-size: 14px;
             background-color: white;
             width: fit-content;
             margin-right: 10px;
@@ -499,10 +492,10 @@
         .action-btn {
             width: 100%;
             padding: 14px;
-            background: #6366f1;
+            background:  rgb(21, 60, 83);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 2px;
             font-size: 1em;
             font-weight: 600;
             cursor: pointer;
@@ -513,24 +506,21 @@
         }
 
         .action-btn.custom-btn {
-            background: #f59e0b;
+            background: rgb(21, 60, 83);
         }
 
         .action-btn.custom-btn:hover {
-            background: #d97706;
+            background:  rgb(21, 60, 83);
         }
 
         .info-section {
-           
-         
             padding: 25px;
             margin-bottom: 30px;
-           
         }
 
         .info-section h3 {
             font-size: 1.5em;
-            color: #efefef;
+            color: #1f2937;
             margin-bottom: 15px;
         }
 
@@ -551,7 +541,6 @@
             padding: 20px;
             background: #c6c6c6;
             border-radius: 3px;
-     
         }
 
         .info-item h4 {
@@ -582,9 +571,6 @@
                 <h3>💰 Save R1,000+ Per Year!</h3>
                 <p>No recurring hosting or maintenance fees. Focus on growing your business while we handle your online presence and brand identity.</p>
             </div>
-
-            <div class="section-header">
- 
 
             <div class="section-divider">
                 <h2>Custom Solutions</h2>
@@ -664,7 +650,7 @@
                         <p>Modern, clean designs that represent your brand perfectly</p>
                     </div>
                     <div class="info-item">
-                        <h4> Secure & Reliable</h4>
+                        <h4>Secure & Reliable</h4>
                         <p>Free SSL certificates and secure hosting included</p>
                     </div>
                     <div class="info-item">
@@ -672,13 +658,14 @@
                         <p>All websites are fully responsive and mobile friendly</p>
                     </div>
                     <div class="info-item">
-                        <h4> Mobile Optimized</h4>
+                        <h4>Mobile Optimized</h4>
                         <p>All websites are fully responsive and mobile-friendly</p>
                     </div>
                 </div> 
             </div>
         </div>
     </div>
+
 </body>
 <script src="script.js"></script>
 </html>
