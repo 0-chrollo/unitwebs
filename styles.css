@@ -20,8 +20,6 @@ body {
    
 }
 
-
-
 .navbar {
     background: transparent;
   position:fixed;
@@ -32,8 +30,6 @@ body {
 
     
 }
-
-
 
 .nav-container {
     position: sticky;
@@ -164,7 +160,6 @@ background-color: rgba(240, 248, 255, 0.653);
     visibility: visible;
 }
 
-
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
     .hamburger {
@@ -184,7 +179,7 @@ background-color: rgba(240, 248, 255, 0.653);
         left: -100%;
         width: 100%;
         height: 100vh;
-        background:white;
+        background:rgba(130, 130, 130, 0.943);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -220,9 +215,9 @@ background-color: rgba(240, 248, 255, 0.653);
 
     .nav-link {
         font-size: 1.2rem;
-        color: rgb(0, 0, 0);
-        padding: 1rem 2.5rem;
-       
+        color: rgb(189, 189, 189);
+        padding: 1rem 1.5rem;
+      
         border: 2px solid rgb(149, 149, 149);
         width:fit-content;
     }
