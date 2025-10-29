@@ -460,7 +460,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 50%;
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
       display: none;
@@ -470,16 +470,16 @@
     }
 
     .popup-box {
-      background: #fff;
+      background: black;
       padding: 2rem 3rem;
-      border-radius: 3px;
+      border-radius: 1px;
       text-align: center;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     }
 
     .popup-box i {
       margin-bottom: 1rem;
-      color: rgb(47, 47, 47);
+      color: rgb(255, 255, 255);
     }
 
     .popup-box p {
@@ -488,17 +488,17 @@
     }
 
     .popup-box button {
-      background-color: rgb(47, 47, 47);
-      color: white;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
       border: none;
       padding: 0.6rem 1.2rem;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 1px;
       cursor: pointer;
     }
 
     .popup-box button:hover {
-      background-color: rgb(20, 20, 20);
+      background-color: rgb(255, 255, 255);
     }
   </style>
 
@@ -585,7 +585,7 @@
 <div id="successPopup" class="popup-overlay">
   <div class="popup-box">
     <i class="fas fa-check-circle fa-3x" style="color: green;"></i>
-    <p>Thank you! We've received your project inquiry and will get back to you within 24 hours.</p>
+    <p>Thank you! We've received your project inquiry and will get back to you within 5 hours.</p>
     <button onclick="closePopup()">Close</button>
   </div>
 </div>
@@ -634,7 +634,7 @@
  
     function closePopup() {
       document.getElementById("successPopup").style.display = "none";
-      window.location.href = "index.html";
+      window.location.href = "contact.html";
     }
   </script>
 </main>
