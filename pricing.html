@@ -1237,6 +1237,85 @@
     </div>
 </footer>
 
+
+
+
+
+
+
+
+
+<div class="fixed-widgets">
+    <a href="https://wa.me/27695306837">
+     
+        <i class="fab fa-whatsapp"></i>  
+    </a>
+</div>
+  <!--Contact-Widgets-->
+  
+  <style>
+    .fixed-widgets {
+    position: fixed;
+    bottom: 75px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    animation: float 2s ease-in-out infinite; /* Added floating animation */
+  }
+  
+  /* Floating effect animation */
+  @keyframes float {
+    0% {
+        transform: translateY(0); /* Start at normal position */
+    }
+    50% {
+        transform: translateY(-15px); /* Move up by 10px */
+    }
+    100% {
+        transform: translateY(0); /* Return to normal position */
+    }
+  }
+  
+  /* Widget style */
+  .fixed-widgets a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #08702e; /* WhatsApp green */
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Call widget style */
+  .fixed-widgets a.call-widget {
+    background-color: #34b7f1; /* Light blue for the call widget */
+  }
+  
+  /* Hover effect */
+  .fixed-widgets a:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Icon styling */
+  .fixed-widgets i {
+    font-size: 27px;
+  }
+  
+  </style>
+
+
+
+
+
+
+
 </body>
 <script src="script.js"></script>
 </html>
