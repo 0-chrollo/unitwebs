@@ -1,7 +1,17 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+
 body {
     font-family:'Gill Sans';
  
     line-height: 1.6;
     text-align: left;
 }
+
+
 
