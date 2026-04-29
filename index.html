@@ -10,39 +10,187 @@
     <link rel="stylesheet" href="styles.css" >
 
 
-
-
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+<link rel="manifest" href="/site.webmanifest"/>
 </head>
 
 <body>
-<nav class="navbar"  id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo" id="logo">
-        <img src="unitw2.png" alt="Logo">
-        <span class="logo-text"></span>
-      </a>
-  
-      <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="pricing.html" class="nav-link">Packages</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Inquire</a></li>
-     
-      </ul>
-  
-      <div class="hamburger" id="hamburger">
-        <span style="width:27px"></span>
-        <span style="width:14px"></span></span>
-        <span></span>
-      </div>
+
+
+
+
+
+
+
+<nav>
+  <div class="logo">
+    <img src="unitw2.png" alt="Logo">
+    
+  </div>
+
+
+
+  <button class="menu-toggle" id="toggle" aria-label="Toggle menu">
+
+    <span>Menu</span>
+    <div class="bars">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </button>
+
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Services</a>
+
+  </div>
   
-    <div id="overlay"></div>
-  </nav>
+</nav>
+
+
+
+
+<script>
+  const toggle = document.getElementById('toggle');
+const navLinks = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+</script>
+
+<style>
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+   font-family: 'Segoe UI'
+  
+  }
+
+nav {
+  background: linear-gradient(135deg, #181818 0%, #2d2d2d 100%);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: 70px;
+  position:fixed;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 6rem; /* adjust this to resize your logo */
+  width: auto;
+  display: block;
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.menu-toggle .bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle .bars span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: #ffffff;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+}
+
+/* Animate to X when open */
+.menu-toggle.open .bars span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.menu-toggle.open .bars span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bars span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Dropdown */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.nav-links.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.nav-links a {
+  padding: 14px 32px;
+  color:#02162e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+  color:white;
+}
+
+/* Desktop: show links inline */
+@media (min-width: 768px) {
+  .menu-toggle { display: none; }
+
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    max-height: none !important;
+    opacity: 1 !important;
+    background: transparent;
+  }
+
+  .nav-links a {
+    padding: 0 18px;
+    color:#ffffff;
+  }
+}
+
+</style>
+
 
   <style>
     * {
@@ -76,7 +224,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('bgp.webp') center/cover no-repeat;
+      
         filter: blur(2px);
         z-index: -1;
     } 
@@ -88,7 +236,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(35, 35, 35, 0.728);
+        background: linear-gradient(135deg, #2b2b2b 0%, #181818 100%);
         z-index: -1;
     }
     
@@ -239,15 +387,14 @@
     .cta {
         border: 2px solid rgba(255, 255, 255, 0.606);
         background-color: rgb(255, 255, 255);
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+      border-radius: 35px;
         padding: 4px 16px;
         text-align: center;
         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         font-weight: 500;
         color: rgb(93, 93, 93);
         cursor: pointer;
-        align-self: flex-start;
+        align-self:center;
         width: fit-content;
     }
 
@@ -286,7 +433,7 @@
         <div class="header">We are UnitWebs</div>
         
         <div class="title"> 
-            We Build Custom Business Websites <br>you will own for Years
+            We Build Custom  <span>Premium</span> Business Websites <br>you will own for Years
         </div>
         <br>
         <div class="features">
@@ -308,11 +455,9 @@
             </div>
         </div>
         <br>
-        <div class="desc">
-            <p>UnitWebs specializes in crafting bespoke websites from the ground up, no drag and drop builders, no recycled themes. Every line of code is written specifically for your business, with advanced SEO architecture, lightning-fast performance  and ownership that's truly yours.</p>
-        </div>
+    
         
-        <div class="cta"> <a href="pricing.html" style="text-decoration:none;color: rgb(47, 47, 47);"> Packages →</a></div>
+        <div class="cta"> <a href="contact.html" style="text-decoration:none;color:  #1b1b1b;"> Get A Website </a></div>
     </div>
     
     <div class="column2">
@@ -332,6 +477,255 @@
 
 
 
+<style>
+    *{ 
+        box-sizing: border-box;
+         margin: 0; 
+         padding: 0;
+         }
+
+    .mo{
+        background: linear-gradient(135deg, #181818 0%, #2d2d2d 100%);
+    
+      min-height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .showcase {
+      width: 100%;
+      max-width: 1100px;
+      padding: 36px 24px 32px;
+    }
+
+    .showcase-label {
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .showcase-title {
+      text-align: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 2px;
+      color: #f0f0f0;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .showcase-title span { color: #ff5c35; }
+
+    .track-wrapper {
+      overflow: visible;
+    }
+
+    .track {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+
+    /* Stagger */
+    .phone-wrap:nth-child(1) { margin-bottom: 30px; }
+    .phone-wrap:nth-child(2) { margin-bottom: 0;    }
+    .phone-wrap:nth-child(3) { margin-bottom: 42px; }
+    .phone-wrap:nth-child(4) { margin-bottom: 15px; }
+
+    .phone-wrap {
+      flex-shrink: 0;
+      width: 140px;
+    }
+
+    .phone-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Dots (hidden desktop) ── */
+    .dots {
+      display: none;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffffff;
+      cursor: pointer;
+      transition: width .3s ease, background .3s ease, border-radius .3s ease;
+    }
+
+    .dot.active {
+      width: 20px;
+      border-radius: 3px;
+      background: #ff5c35;
+    }
+
+    /* ══════════════════════
+       MOBILE
+    ══════════════════════ */
+    @media (max-width: 859px) {
+
+      .showcase { padding: 36px 0 36px; }
+      .showcase-title { font-size: 18px; margin-bottom: 28px; }
+
+      .track-wrapper {
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 12px 0 20px;
+        cursor: grab;
+      }
+
+      .track-wrapper::-webkit-scrollbar { display: none; }
+      .track-wrapper.grabbing { cursor: grabbing; }
+
+      .track {
+        padding-left:  calc(50vw - 90px);
+        padding-right: calc(50vw - 90px);
+        padding-bottom: 0;
+        gap: 16px;
+        align-items: center;
+        justify-content: flex-start;
+        width: max-content;
+      }
+
+      .phone-wrap:nth-child(1),
+      .phone-wrap:nth-child(2),
+      .phone-wrap:nth-child(3),
+      .phone-wrap:nth-child(4) {
+        margin-bottom: 0;
+      }
+
+      .phone-wrap {
+        scroll-snap-align: center;
+        width: 180px;
+        transition: transform .4s ease, opacity .4s ease;
+      }
+
+      .phone-wrap:not(.is-active) {
+        transform: scale(0.88);
+        opacity: 0.4;
+      }
+
+      .phone-wrap.is-active {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .dots { display: flex; }
+    }
+  </style>
+
+<div class="mo">
+<section class="showcase">
+    <br>
+
+  <h1 class="showcase-title">Let Us Build Your Premium Website<br> For only<span> R6999</span></h1>
+
+  <div class="track-wrapper" id="trackWrapper">
+    <div class="track">
+
+      <div class="phone-wrap is-active" data-index="0">
+        <img src="mockups/firstm.png" alt="Screen 1"/>
+      </div>
+
+      <div class="phone-wrap" data-index="1">
+        <img src="mockups/fortm.png" alt="Screen 2"/>
+      </div>
+
+      <div class="phone-wrap" data-index="2">
+        <img src="mockups/secm.png" alt="Screen 3"/>
+      </div>
+
+      <div class="phone-wrap" data-index="3">
+        <img src="mockups/thirdm.png" alt="Screen 4"/>
+      </div>
+
+      <div class="phone-wrap" data-index="3">
+        <img src="mockups/fivem.png"  alt="Screen 4"/>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="dots" id="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</section>
+</div>
+
+<script>
+  const wrapper = document.getElementById('trackWrapper');
+  const cards   = document.querySelectorAll('.phone-wrap');
+  const dotEls  = document.querySelectorAll('.dot');
+
+  function getActive() {
+    const mid = wrapper.scrollLeft + wrapper.clientWidth / 2;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((c, i) => {
+      const dist = Math.abs((c.offsetLeft + c.offsetWidth / 2) - mid);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    return closest;
+  }
+
+  function updateUI(i) {
+    cards.forEach((c, j)  => c.classList.toggle('is-active', j === i));
+    dotEls.forEach((d, j) => d.classList.toggle('active',    j === i));
+  }
+
+  wrapper.addEventListener('scroll', () => updateUI(getActive()), { passive: true });
+
+  dotEls.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const card   = cards[i];
+      const target = card.offsetLeft - (wrapper.clientWidth / 2 - card.offsetWidth / 2);
+      wrapper.scrollTo({ left: target, behavior: 'smooth' });
+    });
+  });
+
+  let isDown = false, startX = 0, scrollL = 0;
+
+  wrapper.addEventListener('mousedown', e => {
+    isDown  = true;
+    startX  = e.pageX - wrapper.offsetLeft;
+    scrollL = wrapper.scrollLeft;
+    wrapper.classList.add('grabbing');
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDown = false;
+    wrapper.classList.remove('grabbing');
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    wrapper.scrollLeft = scrollL - (e.pageX - wrapper.offsetLeft - startX) * 1.4;
+  });
+</script>
+
+
+
+</div>
+</div>
 
 
 
@@ -444,27 +838,7 @@
             }
         </style>
 
-<div class="welcome-section">
-    <div class="contain">
-        <div class="welcome-label">About UnitWebs</div>
-        
-        <h1 class="main-heading">
-            We build websites you own.<br>
-        </h1>
-        
-        <p class="content-text">
-            UnitWebs was founded on a simple belief your website should be an asset not a recurring expense.
-        </p>
-        
-        <p class="content-text">
-            We're a web development agency that engineers custom digital solutions no shortcuts, no compromises. Every website we create is built to match your unique business needs, built with scalable architecture that adapts as you grow.
-        </p>
-        
-        <p class="content-text">
-            Our approach combines enterprise-level security, advanced SEO foundations and performance optimization with a business model that makes sense: one investment, years of reliable performance. We're not here to lock you into subscriptions we're here to build digital foundations that last.
-        </p>
-    </div>
-</div>
+
 
 
 </main>
@@ -595,7 +969,7 @@
         bottom: 0;
         background: url('bgp.webp') center/cover no-repeat;
         
-        filter: blur(2px);
+        filter: blur(1.5px);
         z-index: -1000;
     } 
     
@@ -606,7 +980,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(46, 46, 46, 0.803);
+        background: rgba(27, 27, 27, 0.695);
         z-index: -1000;
     }
     
@@ -623,8 +997,8 @@
             font-size: 2rem;
             font-weight: 600;
             border: 1.7px solid white;
-        border-top-left-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         padding: 1px 25px;
         width: fit-content;
         font-size: clamp(1.2rem, 3vw, 1.8rem);
@@ -770,7 +1144,7 @@
 <section class="features-section">
     <div class="head">
         <h3 class="nf">Precision</h3>
-        <p>We don't just build websites, we engineer digital assets with features that set your business apart from the competition.</p>
+     
     </div>
 
     <div class="features-container">
@@ -821,8 +1195,8 @@
     
     </div>
 </section>
-       <div class="head" style="text-align:end; padding-right:8vh; " >
-                <p><button class="cta"><a href="pricing.html" style="text-decoration:none; color:#111827;">Packages →</a></button></p>
+       <div class="head" style="text-align:center;" >
+                <p><button class="cta"><a href="pricing.html" style="text-decoration:none; color:#111827;">Packages</a></button></p>
                 </div>
 <br>
 </section>
