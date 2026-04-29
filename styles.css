@@ -1,17 +1,128 @@
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
   }
+  
+  body {
+     font-family: 'Segoe UI'
+    
+    }
+  
 
 
-body {
-    font-family:'Gill Sans';
- 
-    line-height: 1.6;
-    text-align: left;
-}
+    .highlighted-word{
 
-
-
+        color: #ff5c35;
+    }
+  nav {
+    background: linear-gradient(135deg, #1f1f1f 0%, #1b1b1b 100%);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    height: 70px;
+    position:fixed;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    height: 6rem; /* adjust this to resize your logo */
+    width: auto;
+    display: block;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+  }
+  
+  .menu-toggle .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .menu-toggle .bars span {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: #ffffff;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animate to X when open */
+  .menu-toggle.open .bars span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .menu-toggle.open .bars span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open .bars span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+  
+  /* Dropdown */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+  
+  .nav-links.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+  
+  .nav-links a {
+    padding: 14px 32px;
+    color:#02162e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:0.80rem;
+    transition: background 0.2s;
+  }
+  
+  .nav-links a:hover {
+    background: linear-gradient(135deg, #181819 0%, #323232 100%);
+    color:white;
+  }
+  
+  /* Desktop: show links inline */
+  @media (min-width: 768px) {
+    .menu-toggle { display: none; }
+  
+    .nav-links {
+      flex-direction: row;
+      position: static;
+      max-height: none !important;
+      opacity: 1 !important;
+      background: transparent;
+    }
+  
+    .nav-links a {
+      padding: 0 18px;
+      color:#ffffff;
+    }
+  }
+  
