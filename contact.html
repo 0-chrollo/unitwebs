@@ -65,46 +65,7 @@
         box-sizing: border-box;
     }
     
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-       
-        min-height: 40vh;
-    }
-    
-    .column1 {
-        flex: 1;
-        min-width: 300px;
-        padding: 35px;
-        backdrop-filter: blur(1px);
-        display: flex;
-        flex-direction: column;
-        gap: 26px;
-        position: relative;
-    }
-    
-    .column1::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('bgp.webp') center/cover no-repeat;
-        filter: blur(2px);
-        z-index: -1;
-    } 
-    
-    .column1::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(35, 35, 35, 0.728);
-        z-index: -1;
-    }
+
     
     .column2 {
    display: none;
@@ -302,9 +263,254 @@
         <br>
   
 
-        <div class="desc">
-            <p>We build custom high-performance websites you actually own with enterprisegrade security, advanced SEO, and zero ongoing hosting costs. One investment. Years of growth.</p>
-        </div>
+       
+
+<style>
+
+
+  .mo{
+      background: linear-gradient(135deg, #1d1d1d 0%, #1b1b1b 100%);
+  
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .showcase {
+    width: 100%;
+    max-width: 1100px;
+    padding: 36px 24px 32px;
+  }
+
+  .showcase-label {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 10px;
+  }
+
+  .showcase-title {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #f0f0f0;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  .showcase-title span { color: rgb(246, 103, 1); }
+
+  .track-wrapper {
+    overflow: visible;
+  }
+
+  .track {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  /* Stagger */
+  .phone-wrap:nth-child(1) { margin-bottom: 30px; }
+  .phone-wrap:nth-child(2) { margin-bottom: 0;    }
+  .phone-wrap:nth-child(3) { margin-bottom: 42px; }
+  .phone-wrap:nth-child(4) { margin-bottom: 15px; }
+
+  .phone-wrap {
+    flex-shrink: 0;
+    width: 195px;
+  }
+
+  .phone-wrap img {
+    width: 33vh;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Dots (hidden desktop) ── */
+  .dots {
+    display: none;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    transition: width .3s ease, background .3s ease, border-radius .3s ease;
+  }
+
+  .dot.active {
+    width: 25px;
+    border-radius: 3px;
+    background: #ff5c35;
+  }
+
+  /* ══════════════════════
+     MOBILE
+  ══════════════════════ */
+  @media (max-width: 859px) {
+
+    .showcase { padding: 36px 0 36px; }
+    .showcase-title { font-size: 18px; margin-bottom: 28px; }
+
+    .track-wrapper {
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 12px 0 20px;
+      cursor: grab;
+    }
+
+    .track-wrapper::-webkit-scrollbar { display: none; }
+    .track-wrapper.grabbing { cursor: grabbing; }
+
+    .track {
+      padding-left:  calc(50vw - 90px);
+      padding-right: calc(50vw - 90px);
+      padding-bottom: 0;
+      gap: 16px;
+      align-items: center;
+      justify-content: flex-start;
+      width: max-content;
+    }
+
+    .phone-wrap:nth-child(1),
+    .phone-wrap:nth-child(2),
+    .phone-wrap:nth-child(3),
+    .phone-wrap:nth-child(4) {
+      margin-bottom: 0;
+    }
+
+    .phone-wrap {
+      scroll-snap-align: left;
+      width: 190px;
+      transition: transform .4s ease, opacity .4s ease;
+    }
+
+    .phone-wrap:not(.is-active) {
+      transform: scale(0.88);
+      opacity: 0.4;
+    }
+
+    .phone-wrap.is-active {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .dots { display: flex; }
+  }
+</style>
+
+<div class="mo">
+<section class="showcase">
+  <br>
+
+<h1 class="showcase-title">Let Us Build Your Premium Website<br> From only<span> R4999</span></h1>
+
+<div class="track-wrapper" id="trackWrapper">
+  <div class="track">
+
+    <div class="phone-wrap is-active" data-index="0">
+      <img src="mockups/firstm.png" alt="Screen 1"/>
+    </div>
+
+    <div class="phone-wrap" data-index="1">
+      <img src="mockups/fortm.png" alt="Screen 2"/>
+    </div>
+
+    <div class="phone-wrap" data-index="2">
+      <img src="mockups/secm.png" alt="Screen 3"/>
+    </div>
+
+    <div class="phone-wrap" data-index="3">
+      <img src="mockups/thirdm.png" alt="Screen 4"/>
+    </div>
+
+    <div class="phone-wrap" data-index="3">
+      <img src="mockups/fivem.png"  alt="Screen 4"/>
+    </div>
+
+  </div>
+</div>
+
+<div class="dots" id="dots">
+  <div class="dot active"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+</section>
+</div>
+
+<script>
+const wrapper = document.getElementById('trackWrapper');
+const cards   = document.querySelectorAll('.phone-wrap');
+const dotEls  = document.querySelectorAll('.dot');
+
+function getActive() {
+  const mid = wrapper.scrollLeft + wrapper.clientWidth / 2;
+  let closest = 0, minDist = Infinity;
+  cards.forEach((c, i) => {
+    const dist = Math.abs((c.offsetLeft + c.offsetWidth / 2) - mid);
+    if (dist < minDist) { minDist = dist; closest = i; }
+  });
+  return closest;
+}
+
+function updateUI(i) {
+  cards.forEach((c, j)  => c.classList.toggle('is-active', j === i));
+  dotEls.forEach((d, j) => d.classList.toggle('active',    j === i));
+}
+
+wrapper.addEventListener('scroll', () => updateUI(getActive()), { passive: true });
+
+dotEls.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    const card   = cards[i];
+    const target = card.offsetLeft - (wrapper.clientWidth / 2 - card.offsetWidth / 2);
+    wrapper.scrollTo({ left: target, behavior: 'smooth' });
+  });
+});
+
+let isDown = false, startX = 0, scrollL = 0;
+
+wrapper.addEventListener('mousedown', e => {
+  isDown  = true;
+  startX  = e.pageX - wrapper.offsetLeft;
+  scrollL = wrapper.scrollLeft;
+  wrapper.classList.add('grabbing');
+});
+
+document.addEventListener('mouseup', () => {
+  isDown = false;
+  wrapper.classList.remove('grabbing');
+});
+
+document.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  wrapper.scrollLeft = scrollL - (e.pageX - wrapper.offsetLeft - startX) * 1.4;
+});
+</script>
+
+
+
+</div>
+</div>
+
         
     </div>
 </div>
